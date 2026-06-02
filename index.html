@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>El Sauce Restaurante</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+:root{
+    --color-principal:#8B5A2B;
+    --color-secundario:#D4A373;
+    --color-claro:#FFF8F0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:rgba(0,0,0,.85);
+}
+
+/* BOTONES */
+
+.btn-sauce{
+    background:var(--color-principal);
+    color:white;
+    border:none;
+    padding:12px 28px;
+}
+
+.btn-sauce:hover{
+    background:#6b431f;
+    color:white;
+}
+
+/* HERO SLIDER */
+
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.slider{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:1;
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:2;
+    width:100%;
+}
+
+.hero-content h1{
+    font-size:5rem;
+}
+
+.hero-content p{
+    font-size:1.4rem;
+}
+
+/* FLECHAS */
+
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:3;
+
+    border:none;
+    background:rgba(255,255,255,.2);
+
+    color:white;
+
+    width:50px;
+    height:50px;
+
+    font-size:30px;
+    cursor:pointer;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+/* TITULOS */
+
+.section-title{
+    color:var(--color-principal);
+    font-weight:bold;
+}
+
+/* TARJETAS */
+
+.card{
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    height:250px;
+    object-fit:cover;
+}
+
+/* FOOTER */
+
+footer{
+    background:#222;
+    color:white;
+}
+.hero-logo{
+    width:250px;
+    max-width:80%;
+    margin-bottom:20px;
+
+    filter: drop-shadow(0 0 15px rgba(0,0,0,.6));
+}
+
+
+.hero-logo{
+    width:400px;
+    max-width:85%;
+    margin-bottom:30px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0,0,0,.7))
+        drop-shadow(0 0 25px rgba(0,0,0,.5));
+
+
+}
+
+
+.logo-navbar{
+    height:80px;
+    width:auto;
+}
+
+.imgposada{
+    display:block;
+    margin:20px auto;
+    width:1000px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#">
+
+    <img src="img/logo.png"
+     class="logo-navbar"
+     alt="Logo El Sauce">
+</a>
+
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#historia">Historia</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#menu-rest">Menú</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#galeria">Galería</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contacto">Contacto</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="eventos.html">
+    Eventos
+</a>
+
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="slider">
+
+<img src="img/hotckakes.jpg" class="slide active">
+<img src="img/cafehot.jpg" class="slide">
+<img src="img/tamp.jpg" class="slide">
+<img src="img/bisteck.jpg" class="slide">
+<img src="img/CarneTampiqueña.jpg" class="slide">
+<img src="img/Chilaquiles puercos.jpg" class="slide">
+<img src="img/encremadas.jpg" class="slide">
+<img src="img/camarones cc.jpg" class="slide">
+<img src="img/comidas corridas.jpg" class="slide">
+<img src="img/empipianadas.jpg" class="slide">
+<img src="img/hamburquesa.jpg" class="slide">
+<img src="img/parrilladas.jpg" class="slide">
+
+</div>
+
+<div class="overlay"></div>
+
+<button class="slider-btn prev">❮</button>
+<button class="slider-btn next">❯</button>
+
+<div class="hero-content text-center text-white">
+
+
+
+    <div class="hero-content text-center text-white">
+
+    <img src="img/logo.png"
+         class="hero-logo"
+         alt="Logo El Sauce">
+
+    <p class="lead">
+        Con el sabor que nos distingue
+    </p>
+
+   <a href="pdf/Menu2026.pdf"
+   target="_blank"
+   class="btn btn-sauce btn-lg">
+    Ver Menú
+</a>
+
+</div>
+
+
+
+
+</div>
+
+</section>
+
+<!-- HISTORIA -->
+
+<section id="historia" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title text-center mb-4">
+Nuestra Historia
+</h2>
+
+<p class="text-center">
+Hace 15 años, "El Sauce" comenzó como un pequeño sueño en la cocina de nuestra casa. Hoy, nos llena de orgullo ver cómo hemos crecido gracias a su apoyo.
+Queremos agradecer a nuestro gran equipo de trabajo Detrás de cada deliciosa receta y sonrisa, se encuentra un equipo excepcional que trabaja incansablemente para que cada visita sea memorable. Gracias a nuestras dedicadas cocineras, ayudantes, meseras, vendedoras y demás por su esfuerzo y pasión
+Agradecemos a nuestros clientes por su lealtad. Ustedes son la razón de nuestro éxito y mejora continua.
+Gracias por estos 15 años de recuerdos y sabores compartidos. ¡Los esperamos en "El Sauce" para seguir creando momentos inolvidables!
+Con cariño, El equipo de "El Sauce".
+</p>
+
+
+  <img src="img/posada.jpg"
+         class="imgposada"
+         alt="posada">
+
+</div>
+
+</section>
+
+<!-- MENÚ -->
+
+<section id="menu-rest" class="py-5 bg-light">s
+
+<div class="container">
+
+<h2 class="section-title text-center mb-5">
+Platillos Destacados
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<img src="img/hotckakes.jpg" alt="">
+
+<div class="card-body">
+
+<h5>Hot Cakes Especiales</h5>
+
+<p>
+Puedes escoger hasta 3 ingredientes
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<img src="img/TAMPIQUEÑA.jpg" alt="">
+
+<div class="card-body">
+
+<h5>Carne a la Tampiqueña</h5>
+
+<p>
+    Carne acompañada de enchiladas, guacamole, papas, frijoles,refritos, queso asado y totopos.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card shadow">
+
+<img src="img/Barda.jpg" alt="">
+
+<div class="card-body">
+
+<h5>Torta de la Barda</h5>
+
+<p>
+El auténtico sabor de la zona sur de Tamaulipas.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section id="galeria" class="py-5">
+
+<div class="container">
+
+<h2 class="section-title text-center mb-5">
+Galería
+</h2>
+
+<div class="row g-3">
+
+<div class="col-md-3">
+<img src="img/hotckakes.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-md-3">
+<img src="img/hamburquesa.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-md-3">
+<img src="img/Barda.jpg" class="img-fluid rounded">
+</div>
+
+<div class="col-md-3">
+<img src="img/laguna.jpg" class="img-fluid rounded">
+</div>
+
+
+
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACTO -->
+
+<section id="contacto" class="py-5">
+
+    <div class="container">
+
+        <h2 class="section-title text-center mb-5">
+            Contacto
+        </h2>
+
+        <div class="row align-items-center">
+
+            <div class="col-md-6">
+
+                <h4>Información</h4>
+
+                <p>
+                    📍 Av. Tamaulipas 702, Héroe de Nacozari,
+                    89520 Cd. Madero, Tamaulipas
+                </p>
+
+                <p>
+                    📞 (833) 186 7787
+                </p>
+
+                <p>
+                    ✉️ comedorelsauce1@gmail.com
+                </p>
+
+                <a href="https://wa.me/528331867787"
+                   target="_blank"
+                   class="btn btn-success">
+                    WhatsApp
+                </a>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <iframe
+                    src="https://maps.google.com/maps?q=Av.+Tamaulipas+702,+Héroe+de+Nacozari,+89520+Cd+Madero,+Tamps.&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="350"
+                    style="border:0;border-radius:15px;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="py-4">
+
+    <div class="container text-center">
+
+        <p class="mb-0">
+            © 2026 El Sauce Restaurante
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+let current = 0;
+
+function showSlide(index){
+
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+
+    slides[index].classList.add('active');
+}
+
+function nextSlide(){
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    showSlide(current);
+}
+
+function prevSlide(){
+
+    current--;
+
+    if(current < 0){
+        current = slides.length - 1;
+    }
+
+    showSlide(current);
+}
+
+if(nextBtn){
+    nextBtn.addEventListener('click', nextSlide);
+}
+
+if(prevBtn){
+    prevBtn.addEventListener('click', prevSlide);
+}
+
+setInterval(nextSlide, 3000);
+
+</script>
+
+</body>
+</html>
